@@ -1,0 +1,48 @@
+python
+java
+c
+c++
+c#
+sql
+mysql
+postgresql
+oracle
+mongodb
+html
+css
+javascript
+typescript
+react
+angular
+vue
+nodejs
+express
+django
+flask
+fastapi
+spring
+aws
+azure
+gcp
+docker
+kubernetes
+linux
+git
+github
+tensorflow
+pytorch
+keras
+scikit-learn
+machine learning
+deep learning
+nlp
+computer vision
+opencv
+pandas
+numpy
+matplotlib
+power bi
+tableau
+excel
+word
+powerpoint

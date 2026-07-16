@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="result-container">
+
+
+    <h1>
+        Resume Analysis Report
+    </h1>
+
+
+    <!-- ATS SCORE -->
+
+    <div class="score-card">
+
+        <h2>
+            ATS Score
+        </h2>
+
+        <div class="score">
+
+            {{ result["ATS Score"] }}%
+
+        </div>
+
+        <p>
+            Overall resume compatibility score
+        </p>
+
+    </div>
+
+
+
+    <!-- METRICS -->
+
+    <div class="metrics">
+
+
+        <div class="metric-card">
+
+            <h3>
+                Semantic Similarity
+            </h3>
+
+            <p>
+                {{ result["Semantic Score"] }}%
+            </p>
+
+        </div>
+
+
+
+        <div class="metric-card">
+
+            <h3>
+                Skill Match
+            </h3>
+
+            <p>
+                {{ result["Skill Match"] }}%
+            </p>
+
+        </div>
+
+
+
+        <div class="metric-card">
+
+            <h3>
+                Experience Match
+            </h3>
+
+            <p>
+                {{ result["Experience Match"] }}%
+            </p>
+
+        </div>
+
+
+
+        <div class="metric-card">
+
+            <h3>
+                Education Match
+            </h3>
+
+            <p>
+                {{ result["Education Match"] }}%
+            </p>
+
+        </div>
+
+
+
+        <div class="metric-card">
+
+            <h3>
+                Certification Match
+            </h3>
+
+            <p>
+                {{ result["Certification Match"] }}%
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- SKILLS -->
+
+    <div class="skills-section">
+
+
+        <div class="skill-box">
+
+
+            <h2>
+                ✅ Matched Skills
+            </h2>
+
+
+            <ul>
+
+            {% for skill in result["Matched Skills"] %}
+
+                <li>
+                    {{ skill }}
+                </li>
+
+            {% endfor %}
+
+            </ul>
+
+
+        </div>
+
+
+
+        <div class="skill-box missing">
+
+
+            <h2>
+                ❌ Missing Skills
+            </h2>
+
+
+            <ul>
+
+            {% for skill in result["Missing Skills"] %}
+
+                <li>
+                    {{ skill }}
+                </li>
+
+            {% endfor %}
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- SUGGESTIONS -->
+
+    <div class="suggestions">
+
+
+        <h2>
+            Improvement Suggestions
+        </h2>
+
+
+        {% if result["Missing Skills"] %}
+
+        <p>
+            Consider adding these skills:
+        </p>
+
+
+        <ul>
+
+        {% for skill in result["Missing Skills"] %}
+
+            <li>
+                Learn or add experience with {{ skill }}
+            </li>
+
+        {% endfor %}
+
+        </ul>
+
+
+        {% else %}
+
+        <p>
+            Excellent! No major skill gaps detected.
+        </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+
+    <a href="/" class="btn">
+
+        Analyze Another Resume
+
+    </a>
+
+
+
+</div>
+
+
+{% endblock %}

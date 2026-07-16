@@ -1,0 +1,76 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        AI Resume Analyzer
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script
+        src="https://kit.fontawesome.com/6d3d6d4d8c.js"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <span>AI Resume Analyzer</span>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
+<footer>
+
+    Developed using
+
+    Python • Flask • spaCy • Sentence Transformers • XGBoost
+
+</footer>
+
+<script
+src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+</body>
+
+</html>
+```

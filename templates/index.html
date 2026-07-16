@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>
+        AI Resume Analyzer
+    </h1>
+
+    <p>
+        Analyze your resume using NLP, Semantic Similarity
+        and Machine Learning.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <form action="/analyze" method="POST" enctype="multipart/form-data">
+
+
+        <div class="form-group">
+
+            <label>
+                Upload Resume (PDF)
+            </label>
+
+            <input 
+                type="file"
+                name="resume"
+                id="resume"
+                accept=".pdf"
+                required>
+
+            <p id="file-name">
+                No file selected
+            </p>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                Job Description
+            </label>
+
+
+            <textarea
+                name="job_description"
+                rows="10"
+                placeholder="Paste job description here..."
+                required></textarea>
+
+
+        </div>
+
+
+
+        <button 
+            type="submit"
+            class="btn">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Analyze Resume
+
+        </button>
+
+
+    </form>
+
+
+</div>
+
+
+<div class="features">
+
+
+    <div class="feature-card">
+
+        <h3>
+            NLP Analysis
+        </h3>
+
+        <p>
+            Extracts skills, education,
+            experience and certifications.
+        </p>
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+        <h3>
+            AI Matching
+        </h3>
+
+        <p>
+            Uses semantic similarity to
+            compare resume with job requirements.
+        </p>
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+        <h3>
+            ATS Prediction
+        </h3>
+
+        <p>
+            XGBoost model predicts resume compatibility.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
